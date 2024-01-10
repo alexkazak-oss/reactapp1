@@ -4,9 +4,10 @@ import BtnGitHub from '../components/btnGitHub/btnGitHub'
 import { projects } from '../helpers/projectsList'
 
 const Project = () => {
+	
 	const { id } = useParams()
 	const project = projects[id]
-	console.log(project)
+
 	return (
 		<main className='section'>
 			<div className='container'>
@@ -14,7 +15,7 @@ const Project = () => {
 
 					<h1 className='title-1'>{project.title}</h1>
 					
-					<img src={project.imgBig} alt='' 
+					<img src={project.imgBig} alt={project.title} 
 					className='project-details__cover' />
 
 					<div className='project-details__desc'>

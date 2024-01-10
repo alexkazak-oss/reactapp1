@@ -1,4 +1,5 @@
 import './style.css'
+import  MainSwiper  from './../main/swiper/Swiper'
 
 const Main = () => {
 	return (
@@ -18,6 +19,7 @@ const Main = () => {
 					</li>
 				</ul>
 			</div>
+				<MainSwiper/>
 		</main>
 	)
 }
