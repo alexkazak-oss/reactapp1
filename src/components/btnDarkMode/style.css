@@ -1,9 +1,9 @@
-
 /* Dark mode btn */
 
 .dark-mode-btn {
 	order: 9;
 
+	right: 0;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -41,11 +41,12 @@
 	position: relative;
 	z-index: 9;
 }
-
-.moon:hover  * {
+.iconItem {
+	transition: 0.3s;
+}
+.moon:hover * {
 	fill: rgb(51, 130, 173);
 }
 .sun:hover * {
 	fill: rgb(255, 145, 0);
 }
-

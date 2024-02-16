@@ -1,4 +1,6 @@
 .project {
+	transition: 0.8s ease-in-out;
+
 	max-width: 370px;
 	background-color: var(--project-card-bg);
 	box-shadow: var(--box-shadow);
@@ -14,6 +16,8 @@
 }
 
 .project__title {
+	transition: 0.8s ease-in-out;
+
 	padding: 15px 20px 25px;
 	font-weight: 700;
 	font-size: 24px;

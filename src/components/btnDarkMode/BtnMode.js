@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import detectDarkMode from '../../utils/detectDarkMode'
 import { useLocalStorage } from './../../utils/localStorageHook'
 
-// import moon from './moon.svg'
-// import sun from './sun.svg'
 import { ReactComponent as Moon } from './moon.svg'
 import './style.css'
 import { ReactComponent as Sun } from './sun.svg'

@@ -27,3 +27,9 @@
 .copyright p + p {
 	margin-top: 0.5em;
 }
+
+.social__item img:hover {
+	transition: 0.2s ease-out;
+	transform: scale(112%);
+}
+

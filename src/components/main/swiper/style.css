@@ -1,63 +1,117 @@
-.swiper_container {
-	overflow: hidden;
-	max-height: 400px;
-	margin: 0 auto;
+.swiper-container {
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-height: 60rem;
+	margin: 7rem 0;
 }
 
-.swiper-slide-visible,
+.slide-container {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+}
+
+/* Scrollbar inside */
+
+.swiper-slide::-webkit-scrollbar {
+	display: none;
+}
+iframe {
+	position: inherit;
+	z-index: -10;
+	padding: 0;
+	margin: 0;
+	height: 600px;
+	width: 100%;
+}
+
+.swiper-slide > * {
+	overflow: hidden;
+	border-radius: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.swiper-slide-active:hover {
+	transition: 0.2s ease-in-out;
+	overflow: visible scroll;
+}
+
+.slideImg {
+	height: 810px;
+	border-radius: 2em;
+}
+
+.swiper-slide,
+.swiper-slide-prev,
+.swiper-slide-next {
+	overflow: hidden;
+}
+
+/* Shadows */
+
+.swiper-slide-shadow-left,
 .swiper-slide-shadow-coverflow,
 .swiper-slide-shadow-right,
-.swiper-slide-shadow-left > {
-	border-radius: 2rem;
-
-	display: flex;
-	opacity: 0.2;
+.swiper-slide-shadow-coverflow {
+	display: none;
 }
 
-.swiperSlide::-webkit-scrollbar {
-	width: 0;
+.card-skills {
+	text-align: center;
 }
 
-.swiper-slide {
+/* Buttons */
+
+.slide-buttons {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: center;
+	top: -90px;
+	z-index: 10;
+	position: absolute;
+	width: 27vw;
 }
 
-.swiper-slide-active,
-img {
-	transition: 0.2s ease-in-out;
+.btn-swiper {
+	border-radius: 50%;
+	padding: 0;
+	width: 2em;
+	height: 2em;
 }
 
-.swiper-slide-active:hover {
-	scroll-behavior: smooth;
-	overflow: scroll;
-	transition: 0.2s ease-in-out;
+.btn-img {
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	position: inherit;
 }
 
-.swiperSlide {
-	background-color: rgb(22, 22, 22);
-	border-radius: 1rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 30vw;
+.next {
+	transition: 0.3s ease;
+	border-radius: 50%;
 }
 
-.slideCard {
-	overflow: visible;
-	border-radius: 1rem;
-	width: 380px;
-	height: 400px;
+.prev {
+	transition: 0.3s ease;
+	border-radius: 50%;
+	transform: rotate(180deg);
 }
 
-.swiper-slide-active:hover {
-	img {
-		z-index: 112;
+.prev:active {
+	transform: scale(120%);
+	fill: white;
+}
+.next:active {
+	transform: scale(120%) rotate(180deg);
+	fill: white;
+}
 
-		overflow: visible;
-		margin: 0 auto;
-		transform: scale(115%);
+@media (max-width: 766px) {
+	.slide-container {
+		height: 100%;
 	}
 }

@@ -1,7 +1,7 @@
 const Contacts = () => {
 	return (
 		<>
-			<main className='section'>
+			<main className='section contacts-section'>
 				<div className='container'>
 					<h1 className='title-1'>Contacts</h1>
 
@@ -25,7 +25,6 @@ const Contacts = () => {
 							</p>
 						</li>
 					</ul>
-					
 				</div>
 			</main>
 		</>

@@ -1,0 +1,24 @@
+Uri: https://f.vimeocdn.com/p/4.28.2/css/player.css
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\p\4.28.2\css\player.css
+Content Type: text/css
+
+Uri: https://f.vimeocdn.com/p/4.28.2/js/player.module.js
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\p\4.28.2\js\player.module.js
+Content Type: application/javascript
+
+Uri: https://f.vimeocdn.com/p/4.28.2/js/vendor.module.js
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\p\4.28.2\js\vendor.module.js
+Content Type: application/javascript
+
+Uri: https://i.vimeocdn.com/video/1773055038-2be44cfb1a61212a0a309f064fa5e1ece32da75607ab8dbf0e98309c31dbe6e6-d?mw=80&q=85
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\video\1773055038-2be44cfb1a61212a0a309f064fa5e1ece32da75607ab8dbf0e98309c31dbe6e6-d
+Content Type: image/jpeg
+
+Uri: https://player.vimeo.com/video/897292684
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\video\897292684-1.html
+Content Type: text/html
+
+Uri: https://player.vimeo.com/video/897292684?autoplay=1&loop=1&muted=1&background=1
+File Name: C:\Users\Alexandr\Desktop\React\app1\freelance-react\src\img\projects\videoBg\player.vimeo.com\video\897292684.html
+Content Type: text/html
+

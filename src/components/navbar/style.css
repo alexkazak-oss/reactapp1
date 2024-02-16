@@ -1,6 +1,7 @@
 /* Nav */
 
 .nav {
+	font-family: 'Sixtyfour' sans-serif;
 	padding: 20px 0;
 	background-color: var(--nav-bg);
 	border-bottom: 1px solid var(--nav-border);
@@ -20,8 +21,7 @@
 .logo {
 	margin-right: 0 auto;
 	color: var(--nav-text);
-	font-size: 2em;
-	font-family: 'Poppins', sans-serif;
+	font-size: 1.4em;
 }
 
 .logo strong {
@@ -36,7 +36,6 @@
 	column-gap: 4.6em;
 	font-size: 16px;
 	font-weight: 500;
-	font-family: 'Poppins', sans-serif;
 }
 
 .nav-list__link {
@@ -66,4 +65,43 @@
 	border-radius: 2px;
 }
 
+@media (max-width: 756px) {
+	.nav-row {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
 
+	.logo {
+		margin: 0 auto;
+	}
+
+	.nav-list {
+		margin: 0 auto;
+		max-width: 90vw;
+	}
+	.dark-mode-btn {
+		float: right;
+		margin-right: 0;
+		position: inherit;
+	}
+}
+
+@media (max-width: 446px) {
+	.nav-row {
+		row-gap: 4em;
+		display: flex;
+	}
+	.nav-list {
+		justify-content: space-between;
+		font-size: 1em;
+		display: flex;
+		column-gap: 1em;
+		min-width: 90vw;
+	}
+	.dark-mode-btn {
+		position: absolute;
+		right: 0;
+		float: right;
+	}
+}

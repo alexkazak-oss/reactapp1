@@ -11,7 +11,7 @@ const Navbar = () => {
 			<div className='container'>
 				<div className='nav-row'>
 					<NavLink className='logo'>
-						<strong>Freelancer</strong> portfolio
+						<strong>Alexandr</strong> Kazak
 					</NavLink>
 
 					<BtnMode />
