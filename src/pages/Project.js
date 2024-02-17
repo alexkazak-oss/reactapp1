@@ -12,28 +12,9 @@ const Project = () => {
 			<div className='container'>
 				<div className='project-details'>
 					<h1 className='title-1'>{project.title}</h1>
-
-					{/* <img
-						src={project.imgBig}
-						alt={project.title}
-						className='project-details__cover'
-					/> */}
-					<video controls>
-						<source
-							src={project.videoLink}
-							type='video/mp4'
-							height={500}
-							width={500}
-							frameborder='0'
-							id='id'
-							allow='autoplay; fullscreen'
-							allowfullscreen
-							title='Vimeo Video'
-						/>
-					</video>
 					<iframe
-						height={500}
-						width={500}
+						height={800}
+						width={1200}
 						frameborder='0'
 						id='id'
 						allow='autoplay; fullscreen'

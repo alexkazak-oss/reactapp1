@@ -1,9 +1,8 @@
 import { React } from 'react'
+import BtnScrollToTop from '../btnScrollToTop/BtnScrollToTop'
 import MainDescriptionGSAP from './../../utils/gsap/MainDescriptionGSAP'
 import MainSwiper from './../main/swiper/Swiper'
 import './style.css'
-import BtnScrollToTop from '../btnScrollToTop/BtnScrollToTop'
-
 
 const Main = () => {
 	return (
@@ -25,7 +24,7 @@ const Main = () => {
 			</div>
 			<MainSwiper />
 			<MainDescriptionGSAP />
-			<BtnScrollToTop/>
+			<BtnScrollToTop />
 		</main>
 	)
 }

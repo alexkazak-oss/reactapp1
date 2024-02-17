@@ -1,0 +1,42 @@
+.ticker {
+	overflow: hidden;
+	position: absolute;
+	bottom: 10%;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--page-bg);
+}
+
+.ticker-wrapper {
+	max-width: 70%;
+	text-wrap: nowrap;
+	display: inline-block;
+	flex-direction: row;
+	right: 0;
+	justify-content: space-between;
+}
+
+.ticker-item {
+	color: var(--text-color);
+	font-size: 44px;
+	font-weight: 700;
+	white-space: nowrap;
+	flex-shrink: 0;
+	display: flex;
+}
+
+.letter-hover {
+	transition: 0.3s ease;
+	color: blue;
+}
+
+@media (max-width: 568px) {
+	.ticker {
+		bottom: 15%;
+	}
+	.ticker-item {
+		font-size: 1rem;
+		font-weight: 500;
+		padding: 0 8px;
+	}
+}

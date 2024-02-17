@@ -1,13 +1,18 @@
 import { NavLink } from 'react-router-dom'
 import './style.css'
 
-
-const Project = ( { title, img, index }) => {
+const Project = ({ title, videoLink, index }) => {
 	return (
 		<NavLink to={`/project/${index}`}>
 			<li className='project'>
-					<img src={img} alt={title} className='project__img project__card' />
-					<h3 className='project__title title__card'>{title}</h3>
+				<iframe
+					height={'project__frame'}
+					width={'project__frame'}
+					src={videoLink}
+					alt={title}
+					className='project__frame'
+				/>
+				<h3 className='project__title title__card'>{title}</h3>
 			</li>
 		</NavLink>
 	)

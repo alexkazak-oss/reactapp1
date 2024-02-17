@@ -8,6 +8,7 @@
 }
 
 .slide-container {
+	width: 100%;
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -18,31 +19,18 @@
 .swiper-slide::-webkit-scrollbar {
 	display: none;
 }
-iframe {
+.slide-frame {
 	position: inherit;
 	z-index: -10;
 	padding: 0;
 	margin: 0;
-	height: 600px;
-	width: 100%;
-}
-
-.swiper-slide > * {
-	overflow: hidden;
-	border-radius: 2em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	min-width: 100%;
+	min-height: 500px;
 }
 
 .swiper-slide-active:hover {
 	transition: 0.2s ease-in-out;
 	overflow: visible scroll;
-}
-
-.slideImg {
-	height: 810px;
-	border-radius: 2em;
 }
 
 .swiper-slide,
@@ -58,10 +46,6 @@ iframe {
 .swiper-slide-shadow-right,
 .swiper-slide-shadow-coverflow {
 	display: none;
-}
-
-.card-skills {
-	text-align: center;
 }
 
 /* Buttons */
@@ -110,8 +94,16 @@ iframe {
 	fill: white;
 }
 
-@media (max-width: 766px) {
+@media (max-width: 568px) {
 	.slide-container {
-		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: fit-content;
+	}
+
+	.slide-frame {
+		height: fit-content;
 	}
 }

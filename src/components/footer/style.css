@@ -33,3 +33,14 @@
 	transform: scale(112%);
 }
 
+@media (max-width: 756px) {
+	/* Footer */
+
+	.footer {
+		padding: 40px 0 30px;
+	}
+
+	.footer__wrapper {
+		row-gap: 20px;
+	}
+}

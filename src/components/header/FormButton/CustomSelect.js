@@ -45,20 +45,22 @@ const CustomSelect = () => {
 				<span>T</span>
 			</button>
 
-			<div className={`options-container ${isOpen ? 'open' : ''}`}>
-				{options.map(option => (
-					<label key={option}>
-						<input
-							className='check-box'
-							name='checkbox'
-							type='checkbox'
-							value={option}
-							checked={selectedOptions.includes(option)}
-							onChange={() => handleOptionClick(option)}
-						/>
-						<span className='check-box__text'>{option}</span>
-					</label>
-				))}
+			<div className='options-wrapper'>
+				<div className={`options-container ${isOpen ? 'open' : ''}`}>
+					{options.map(option => (
+						<label key={option}>
+							<input
+								className='check-box'
+								name='checkbox'
+								type='checkbox'
+								value={option}
+								checked={selectedOptions.includes(option)}
+								onChange={() => handleOptionClick(option)}
+							/>
+							<span className='check-box__text'>{option}</span>
+						</label>
+					))}
+				</div>
 			</div>
 		</div>
 	)

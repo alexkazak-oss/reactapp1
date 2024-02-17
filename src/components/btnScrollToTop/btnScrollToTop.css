@@ -20,6 +20,7 @@
 }
 
 .btn-scroll {
+	background-repeat: no-repeat;
 	position: absolute;
 	background-image: url(./../../img//icons//arrow-circle.svg);
 	width: 50px;
@@ -32,4 +33,15 @@
 
 .btn-scroll:hover {
 	transform: scale(110%) rotate(-90deg);
+}
+
+@media (max-width: 568px) {
+	.btn-scroll__visible {
+		bottom: calc(var(--index) * 5);
+		right: calc(var(--index) * 5);
+	}
+	.btn-scroll {
+		height: calc(var(--index) * 4);
+		width: calc(var(--index) * 4);
+	}
 }

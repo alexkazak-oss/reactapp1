@@ -55,6 +55,8 @@ const projects = [
 		skills: 'CSS/SASS/SCSS',
 		img: project4,
 		imgBig: projectBig4,
+		gitHubLink: 'https://github.com/alexkazak-oss',
+
 		id: 4,
 		title: 'Project 4',
 		videoLink:
