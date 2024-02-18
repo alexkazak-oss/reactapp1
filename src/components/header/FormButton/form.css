@@ -22,7 +22,7 @@
 	letter-spacing: 0.15px;
 	font-size: 16px;
 	font-weight: 500;
-
+	z-index: 1;
 	transition: opacity 0.2s ease-in;
 }
 
@@ -45,6 +45,8 @@
 	position: absolute;
 	top: 45%;
 	transition: left 1s ease;
+	z-index: 10 !important;
+
 }
 
 .form-container.visible {
@@ -52,7 +54,6 @@
 	align-items: center;
 	justify-content: center;
 	left: calc(var(--index) * 0.3);
-	z-index: 10 !important;
 }
 
 .form {
@@ -187,7 +188,7 @@ input::placeholder {
 		margin: 0 auto;
 		grid-template-columns: 1fr;
 		grid-row-gap: 0.3em;
-		top: 0;
+		top: 24vh;
 		transform: translate(0%, -100%);
 		width: 100%;
 	}

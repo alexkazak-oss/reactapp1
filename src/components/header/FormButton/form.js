@@ -12,6 +12,7 @@ const HeaderForm = () => {
 	const [isEmailValid, setIsEmailValid] = useState(true)
 	const [isVisible, setIsVisible] = useState(false)
 	const [activeField, setActiveField] = useState(true)
+	const [startX, setStartX] = useState(null)
 
 	const formRef = useRef(null)
 	useEffect(() => {
@@ -57,6 +58,37 @@ const HeaderForm = () => {
 		setIsVisible(!isVisible)
 	}
 
+	// Тач
+	const handleTouchStart = event => {
+		// Получить координаты касания
+		const startX = event.touches[0].clientX
+		// начальные координаты касания в состояние или переменную
+		setStartX(startX)
+	}
+	const handleTouchMove = event => {
+		// касание внутри блока формы
+		if (formRef.current && formRef.current.contains(event.target)) {
+			// текущие координаты касания
+			const currentX = event.touches[0].clientX
+			// определить направление свайпа
+			handleSwipe(startX, currentX)
+		}
+	}
+	const handleTouchEnd = () => {
+		// Сбросить начальные координаты касания
+		setStartX(null)
+	}
+	const handleSwipe = (startX, currentX) => {
+		//  длина свайпа по горизонтали
+		const deltaX = currentX - startX
+		// Пороговое значение для определения свайпа
+		const threshold = 100
+		if (deltaX < -threshold) {
+			// Свайп влево, скрыть форму
+			toggleFormVisibility()
+		}
+	}
+
 	const handleInputChange = event => {
 		const { name, value } = event.target
 		setFormData({ ...formData, [name]: value })
@@ -65,6 +97,7 @@ const HeaderForm = () => {
 		}
 	}
 
+	//Проверка на @
 	const isValidEmail = email => {
 		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 	}
@@ -115,7 +148,13 @@ const HeaderForm = () => {
 				Contact Me
 			</button>
 
-			<div className={`form-container ${isVisible ? 'visible' : ''}`}>
+			<div
+				className={`form-container ${isVisible ? 'visible' : ''}`}
+				ref={formRef}
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+				onTouchEnd={handleTouchEnd}
+			>
 				<form className='form' onSubmit={handleSubmit}>
 					<div className='form__inputs'>
 						<input
