@@ -1,31 +1,41 @@
 .ticker {
-	overflow: hidden;
 	position: absolute;
+	overflow: hidden;
 	bottom: 10%;
+	height: 60px;
+	width: 100%;
+	background-color: var(--page-bg);
 	align-items: center;
 	justify-content: center;
-	background-color: var(--page-bg);
+	display: flex;
 }
 
 .ticker-wrapper {
-	max-width: 70%;
+	position: relative;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 90%;
 	text-wrap: nowrap;
-	display: inline-block;
+	display: flex;
 	flex-direction: row;
 	right: 0;
 	justify-content: space-between;
 }
 
 .ticker-item {
-	color: var(--text-color);
+	position: inherit;
+	display: flex;
+	z-index: 10;
 	font-size: 44px;
 	font-weight: 700;
-	white-space: nowrap;
 	flex-shrink: 0;
-	display: flex;
 }
 
 .letter-hover {
+	transition: all 0.2s ease-in-out;
+	position: inherit;
 	transition: 0.3s ease;
 	color: blue;
 }

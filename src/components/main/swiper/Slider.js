@@ -50,14 +50,15 @@ export const Slider = () => {
 					{
 						<div className='slide-container'>
 							<iframe
-								width={'slide-frame'}
-								height={'slide-frame'}
+								width={'480'}
+								height={500}
 								className='slide-frame'
 								onClick={project.id}
 								allow='fullscreen'
 								allowfullscreen
 								title='Vimeo Video'
 								src={project.videoLink}
+								frameBorder={0}
 							>
 
 								

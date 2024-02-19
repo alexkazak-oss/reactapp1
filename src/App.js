@@ -12,21 +12,33 @@ import Projects from './pages/Projects'
 
 import ScrollToTop from './utils/scrollToTop'
 
+import gsap from './utils/gsap/libs/gsap.min'
+import ScrollSmoother from './utils/gsap/libs/ScrollSmoother.min'
+import ScrollTrigger from './utils/gsap/libs/ScrollTrigger.min'
+
+
+import scrollSmootherConfig from './utils/gsap/scrollSmootherConfig'
+
 function App() {
+	scrollSmootherConfig()
 	return (
-		<Router>
-			<ScrollToTop />
-			<Navbar />
+		<div className='wrapper' id='wrapper'>
+			<div className='content' id='content'>
+				<Router>
+					<ScrollToTop />
+					<Navbar />
 
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/projects' element={<Projects />} />
-				<Route path='/project/:id' element={<Project />} />
-				<Route path='/contacts' element={<Contacts />} />
-			</Routes>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/projects' element={<Projects />} />
+						<Route path='/project/:id' element={<Project />} />
+						<Route path='/contacts' element={<Contacts />} />
+					</Routes>
 
-			<Footer />
-		</Router>
+					<Footer />
+				</Router>
+			</div>
+		</div>
 	)
 }
 

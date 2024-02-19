@@ -3,54 +3,68 @@ import React, { useLayoutEffect, useRef } from 'react'
 import './animationText.css'
 
 function AnimationSliders() {
-	const textRef = useRef(null)
-	const snapRef = useRef(null)
+	const textRefs = useRef([])
 	const words = ['TICKER ITEM TICKER ITEM TICKER ITEM']
 
 	useLayoutEffect(() => {
-		gsap.fromTo(
-			snapRef.current,
-			{ x: -snapRef.current.clientWidth, ease: 'none' },
-			{
-				x: +snapRef.current.clientWidth - 'px',
-				duration: 7,
-				ease: 'none',
-				repeat: -1,
-			}
-		)
+		words.forEach((word, wordIndex) => {
+			const letters = splitWordIntoLetters(word)
+			const duration = 2 // Продолжительность анимации в секундах
+			const delay = 0 // Задержка между запуском анимаций букв
+
+			letters.forEach((letter, letterIndex) => {
+				gsap.fromTo(
+					textRefs.current[wordIndex][letterIndex],
+					{
+						x: -textRefs.current[wordIndex][letterIndex].clientWidth || 1,
+						ease: 'none',
+					},
+					{
+						x: '1000%', // Перемещение до правого края блока
+						ease: 'none',
+						duration: duration,
+						delay: delay * letterIndex, // Задержка для каждой буквы
+						repeat: -1, // Бесконечное повторение анимации
+						repeatDelay: duration + delay * (letters.length == 0), // Задержка перед повторным запуском анимации
+					}
+				)
+			})
+		})
 	}, [])
 
 	const splitWordIntoLetters = word => {
 		return word.split('')
 	}
 
-	// При наведении
-
 	const handleMouseEnter = (event, i) => {
-		event.target.classList.add('letter-hover'), i++
+		event.target.classList.add('letter-hover')
 	}
+
 	const handleMouseLeave = event => {
 		event.target.classList.remove('letter-hover')
 	}
 
 	return (
-		<div className='ticker' ref={snapRef}>
-			<div className='ticker-wrapper' id='ticker-wrapper' ref={snapRef}>
-				{words.map((word, index) => (
+		<div className='ticker'>
+			<div className='ticker-wrapper' id='ticker-wrapper'>
+				{words.map((word, wordIndex) => (
 					<div
 						className='ticker-item'
-						key={index}
-						id='ticker-item'
-						ref={textRef}
+						key={wordIndex}
+						id={`ticker-item-${wordIndex}`}
 					>
-						{splitWordIntoLetters(word).map((letter, index) => (
+						{splitWordIntoLetters(word).map((letter, letterIndex) => (
 							<span
-								ref={textRef}
-								id='letter'
-								key={index}
+								key={letterIndex}
 								className='letter'
-								onMouseEnter={handleMouseEnter}
+								onMouseEnter={event => handleMouseEnter(event, letterIndex)}
 								onMouseLeave={handleMouseLeave}
+								ref={el => {
+									if (!textRefs.current[wordIndex]) {
+										textRefs.current[wordIndex] = []
+									}
+									textRefs.current[wordIndex][letterIndex] = el
+								}}
 							>
 								{letter}
 							</span>
