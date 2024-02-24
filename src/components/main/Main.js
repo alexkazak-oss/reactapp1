@@ -1,13 +1,11 @@
 import { React } from 'react'
-import scrollSmootherConfig from '../../utils/gsap/scrollSmootherConfig'
 import BtnScrollToTop from '../btnScrollToTop/BtnScrollToTop'
-import MainDescriptionGSAP from './../../utils/gsap/MainDescriptionGSAP'
 import MainSwiper from './../main/swiper/Swiper'
+import MainDescription from './MainDescription/MainDescription'
 import './style.css'
 
-
 const Main = () => {
-	scrollSmootherConfig()
+	
 	return (
 		<main className='section'>
 			<div className='container'>
@@ -25,8 +23,10 @@ const Main = () => {
 					</li>
 				</ul>
 			</div>
-			<MainSwiper />
-			<MainDescriptionGSAP />
+			<div className='swiperContainer' data-speed='0.8'>
+				<MainSwiper />
+			</div>
+			<MainDescription />
 			<BtnScrollToTop />
 		</main>
 	)

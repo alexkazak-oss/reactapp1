@@ -1,96 +1,53 @@
-import React, { useEffect, useRef, useState } from 'react'
-import starSvg from './../../../img/icons/star.svg'
+import React, { useEffect } from 'react'
+import { projects } from './../../../helpers/projectsList'
+import { ScrollTrigger } from './../../../utils/libs/ScrollTrigger.min'
+import gsap from './../../../utils/libs/gsap.min'
 import './mainDescriptionStyle.css'
 
 const MainDescription = () => {
-	const [scrollPosition, setScrollPosition] = useState(window.scrollY)
-	const paragraphsRef = useRef([])
-
 	useEffect(() => {
-		const handleScroll = () => {
-			setScrollPosition(window.scrollY)
-		}
+		const animateSections = () => {
+			let sections = gsap.utils.toArray('.experience-container')
 
-		window.addEventListener('scroll', handleScroll)
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [])
-
-	useEffect(() => {
-		const handleAnimation = () => {
-			paragraphsRef.current.forEach(ref => {
-				if (ref) {
-					const rect = ref.getBoundingClientRect()
-					const centerY = window.innerHeight / 2
-					const distanceFromCenter = Math.abs(
-						centerY - (rect.top + rect.height / 2)
-					)
-
-					if (distanceFromCenter < centerY && distanceFromCenter * 1.2) {
-						ref.classList.add('animated-scale-up')
-					}
-					if (distanceFromCenter < centerY / 1.2) {
-						ref.classList.remove('animated-scale-down')
-					} else {
-						ref.classList.remove('animated-scale-up')
-						ref.classList.add('animated-scale-down')
-					}
-				}
+			gsap.to(sections, {
+				xPercent: -100 * (sections.length - 1),
+				ease: 'none',
+				scrollTrigger: {
+					speed: 100,
+					trigger: '.main-experienceWrapper',
+					pin: true,
+					scrub: 1,
+					snap: 2 / (sections.length - 1),
+					fastScrollEnd: true,
+					end:
+						'+=' +
+						document.querySelector('.main-experienceWrapper').offsetWidth,
+				},
 			})
 		}
 
-		window.addEventListener('scroll', handleAnimation)
+		animateSections()
 		return () => {
-			window.removeEventListener('scroll', handleAnimation)
+			// Очистка анимаций при размонтировании компонента
+			ScrollTrigger.getAll().forEach(trigger => trigger.kill())
 		}
-	}, [scrollPosition])
+	}, [])
 
 	return (
-		<div className='main-experience'>
-			<div className='main-experience__title'>
-				<div
-					data-speed='0.9'
-					className='experience-container animated-scale-up animated-scale-down'
-					ref={ref => (paragraphsRef.current[0] = ref)}
-				>
-					<div className='svg-container'>
-						<img src={starSvg} alt='star' className='star-svg' />
-					</div>
-					<p>
-						I take a responsible approach to each order and client, striving to
-						create unique and functional solutions that meet your needs. I
-						always follow the latest technology trends and updates to provide
-						you with the best tools and features.
-					</p>
-				</div>
-
-				<div
-					className='experience-container animated-scale-up animated-scale-down'
-					ref={ref => (paragraphsRef.current[1] = ref)}
-				>
-					<div className='svg-container'>
-						<img src={starSvg} alt='star' className='star-svg' />
-					</div>
-					<p>
-						My goal is not just to create a website, but to offer you a modern
-						and innovative solution that will effectively solve your problems.
-					</p>
-				</div>
-
-				<div
-					className='experience-container animated-scale-up animated-scale-down'
-					ref={ref => (paragraphsRef.current[2] = ref)}
-				>
-					<div className='svg-container'>
-						<img src={starSvg} alt='star' className='star-svg' />
-					</div>
-					<p>
-						Striving for an ideal result, I am ready to satisfy all your
-						requests and wishes. Together we will create a web project that will
-						differ not only in functionality, but also in quality of execution.
-					</p>
-				</div>
+		<div id='main-experience' className='main-experience'>
+			<div className='main-experienceWrapper'>
+				{projects.map((project, index) => (
+					<section
+						key={index}
+						className={`experience-container`}
+						style={{
+							backgroundSize: '100%',
+							backgroundRepeat: 'no-repeat',
+						}}
+					>
+						<span className='experience-text'>{project.skills}</span>
+					</section>
+				))}
 			</div>
 		</div>
 	)

@@ -8,17 +8,12 @@
 	align-items: center;
 	padding: 0;
 	margin: 0;
-	width: auto;
-	height: auto;
-	bottom: 40px;
-	right: 20px;
 	z-index: 100;
 	transition: 2s ease;
 	opacity: 1;
-	right: 80px;
-	bottom: 80px;
+	right: 10vw;
+	bottom: 10vh;
 }
-
 .btn-scroll {
 	background-repeat: no-repeat;
 	position: absolute;

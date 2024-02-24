@@ -1,4 +1,10 @@
+import React, { useEffect } from 'react'
+import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
+
 const Contacts = () => {
+	useEffect(() => {
+		ScrollTrigger.refresh()
+	})
 	return (
 		<>
 			<main className='section contacts-section'>

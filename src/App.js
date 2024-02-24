@@ -1,6 +1,4 @@
-import './styles/main.css'
-import './styles/media.css'
-
+import React, { useEffect, useRef } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 import Footer from './components/footer/Footer'
@@ -10,36 +8,59 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import Projects from './pages/Projects'
 
-import ScrollToTop from './utils/scrollToTop'
+import './styles/main.css'
+import './styles/media.css'
+import { ScrollSmoother } from './utils/libs/ScrollSmoother.min'
+import { ScrollTrigger } from './utils/libs/ScrollTrigger.min'
+import gsap from './utils/libs/gsap.min'
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-import gsap from './utils/gsap/libs/gsap.min'
-import ScrollSmoother from './utils/gsap/libs/ScrollSmoother.min'
-import ScrollTrigger from './utils/gsap/libs/ScrollTrigger.min'
+function initializeGSAP() {
+	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+}
 
+function AppWrapper() {
+	const wrapperRef = useRef(null)
+	const contentRef = useRef(null)
 
-import scrollSmootherConfig from './utils/gsap/scrollSmootherConfig'
+	useEffect(() => {
+		ScrollSmoother.create({
+			wrapper: wrapperRef.current,
+			content: contentRef.current,
+			speed: 800,
+			smooth: 1.2,
+			effects: true,
+		})
+	}, [])
 
-function App() {
-	scrollSmootherConfig()
+	initializeGSAP()
+
 	return (
-		<div className='wrapper' id='wrapper'>
-			<div className='content' id='content'>
-				<Router>
-					<ScrollToTop />
-					<Navbar />
-
-					<Routes>
-						<Route path='/' element={<Home />} />
-						<Route path='/projects' element={<Projects />} />
-						<Route path='/project/:id' element={<Project />} />
-						<Route path='/contacts' element={<Contacts />} />
-					</Routes>
-
-					<Footer />
-				</Router>
+		<div className='wrapper' id='wrapper' ref={wrapperRef}>
+			<div className='content' id='' ref={contentRef}>
+				<Navbar />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/projects' element={<Projects />} />
+					<Route path='/project/:id' element={<Project />} />
+					<Route path='/contacts' element={<Contacts />} />
+				</Routes>
+				<Footer />
 			</div>
 		</div>
 	)
 }
 
-export default App
+function App() {
+	return <AppWrapper />
+}
+
+function AppWithRouter() {
+	return (
+		<Router>
+			<App />
+		</Router>
+	)
+}
+
+export default AppWithRouter

@@ -1,72 +1,39 @@
 /** Main Experience*/
 
 .main-experience {
-	transition: 1s ease;
-
-	margin: 0 auto;
-	width: 60vw;
-	padding: 10rem 0;
-	display: flex;
+	overflow-y: scroll;
 	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: visible;
+	position: relative;
+	height: unset;
+	overflow-x: hidden;
+	margin: 0;
 }
 
-.main-experience__title {
-	flex-direction: column;
-	font-size: 26px;
+.main-experienceWrapper {
+	min-height: 100vh;
 	display: flex;
-	gap: 15.4em;
-	line-height: 2em;
+	flex-wrap: nowrap;
 }
 
-.svg-container {
-	left: 0;
-	position: absolute;
-	height: 100%;
+.experience-container {
+	color: var(--black);
+	overflow-y: hidden;
 	display: flex;
-	width: 1.3em;
-	top: 10px;
+	align-items: center;
+	justify-content: center;
+	min-width: 100vw !important;
 }
 
-.experience-container p {
-	margin-left: 3em;
+.experience-text {
+	font-size: 40px;
+	color: var(--text-color);
 	display: flex;
-}
-
-/* Определение ключевых кадров для анимации масштабирования */
-@keyframes scaleUp {
-	from {
-		transform: scale(0.7);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1.1);
-	}
-}
-
-@keyframes scaleDown {
-	from {
-		transform: scale(1.1);
-	}
-	to {
-		opacity: 0;
-		transform: scale(0.7);
-	}
-}
-
-/* Применение анимации к элементу */
-.animated-scale-up {
-	animation: scaleUp 1s ease-in-out forwards;
-}
-
-.animated-scale-down {
-	animation: scaleDown 1s ease-in-out forwards;
 }
 
 @media (max-width: 768px) {
-	.main-experience {
-		padding: 1rem;
-	}
-	.experience-container {
+	.experience-text {
 		font-size: 16px;
 		line-height: 1.4em;
 	}

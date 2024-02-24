@@ -2,10 +2,15 @@ import { useParams } from 'react-router-dom'
 
 import BtnGitHub from '../components/btnGitHub/btnGitHub'
 import { projects } from '../helpers/projectsList'
-
+import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
 const Project = () => {
+
 	const { id } = useParams()
 	const project = projects[id]
+	
+	useEffect(() => {
+		ScrollTrigger.refresh()
+	})
 
 	return (
 		<main className='section'>
