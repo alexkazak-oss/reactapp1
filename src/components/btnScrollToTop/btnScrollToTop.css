@@ -1,22 +1,13 @@
 .btn-scroll__container {
 	transition: 2s ease;
 	opacity: 0;
+	right: -6vw;
+	position: fixed;
+	bottom: 5vh;
 }
 
-.btn-scroll__visible {
-	position: fixed;
-	align-items: center;
-	padding: 0;
-	margin: 0;
-	z-index: 100;
-	transition: 2s ease;
-	opacity: 1;
-	right: 10vw;
-	bottom: 10vh;
-}
 .btn-scroll {
 	background-repeat: no-repeat;
-	position: absolute;
 	background-image: url(./../../img//icons//arrow-circle.svg);
 	width: 50px;
 	height: 50px;
@@ -28,6 +19,15 @@
 
 .btn-scroll:hover {
 	transform: scale(110%) rotate(-90deg);
+}
+
+.visible {
+	padding: 0;
+	margin: 0;
+	z-index: 100;
+	transition: 2s ease;
+	opacity: 1;
+	right: 3vw;
 }
 
 @media (max-width: 568px) {

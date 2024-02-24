@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
+import BtnScrollToTop from './components/btnScrollToTop/BtnScrollToTop'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
 import Contacts from './pages/Contacts'
@@ -36,18 +37,21 @@ function AppWrapper() {
 	initializeGSAP()
 
 	return (
-		<div className='wrapper' id='wrapper' ref={wrapperRef}>
-			<div className='content' id='' ref={contentRef}>
-				<Navbar />
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/projects' element={<Projects />} />
-					<Route path='/project/:id' element={<Project />} />
-					<Route path='/contacts' element={<Contacts />} />
-				</Routes>
-				<Footer />
+		<>
+			<div className='wrapper' id='wrapper' ref={wrapperRef}>
+				<div className='content' id='' ref={contentRef}>
+					<Navbar />
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/projects' element={<Projects />} />
+						<Route path='/project/:id' element={<Project />} />
+						<Route path='/contacts' element={<Contacts />} />
+					</Routes>
+					<Footer />
+				</div>
 			</div>
-		</div>
+			<BtnScrollToTop />
+		</>
 	)
 }
 
@@ -56,6 +60,9 @@ function App() {
 }
 
 function AppWithRouter() {
+	useEffect(() => {
+		ScrollTrigger.refresh()
+	})
 	return (
 		<Router>
 			<App />

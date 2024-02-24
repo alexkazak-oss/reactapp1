@@ -1,11 +1,9 @@
-import { React } from 'react'
-import BtnScrollToTop from '../btnScrollToTop/BtnScrollToTop'
+import React from 'react'
 import MainSwiper from './../main/swiper/Swiper'
 import MainDescription from './MainDescription/MainDescription'
 import './style.css'
 
 const Main = () => {
-	
 	return (
 		<main className='section'>
 			<div className='container'>
@@ -27,7 +25,6 @@ const Main = () => {
 				<MainSwiper />
 			</div>
 			<MainDescription />
-			<BtnScrollToTop />
 		</main>
 	)
 }

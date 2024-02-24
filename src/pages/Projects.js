@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
-import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
-
 import BtnScrollToTop from '../components/btnScrollToTop/BtnScrollToTop'
 import Project from '../components/projects/project'
 import { projects } from '../helpers/projectsList'
+import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
 
 import './pagesStyle.css'
 
 const Projects = () => {
 	useEffect(() => {
 		ScrollTrigger.refresh()
-	})
+	}, [])
 
 	return (
 		<div className='projects-section'>

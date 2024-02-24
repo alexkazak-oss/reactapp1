@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 
 import Header from '../components/header/Header'
 import Main from './../components/main/Main'
 import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
 
-
-
 const Home = () => {
-	useEffect(() => {
+	useLayoutEffect(() => {
 		ScrollTrigger.refresh()
-	})
+	}, [])
+
 	return (
 		<>
 			<Header />
