@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import BtnMode from './../btnDarkMode/BtnMode'
+import NavbarMobile from './NavbarMobile/NavbarMobile'
+import './NavbarMobile/navbarMobile.scss'
 import './style.css'
 
 const Navbar = () => {
@@ -13,9 +15,11 @@ const Navbar = () => {
 					<NavLink className='logo'>
 						<strong>Alexandr</strong> Kazak
 					</NavLink>
+					<div className='mobile-nav-row'>
+						<NavbarMobile/>
+					</div>
 
 					<BtnMode />
-
 					<ul className='nav-list'>
 						<li className='nav-list__item'>
 							<NavLink

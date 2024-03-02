@@ -1,14 +1,15 @@
 /** Main Experience*/
 .tooltip {
 	pointer-events: none !important;
-	position: fixed;
+	position: absolute;
 	display: flex;
 
 	padding: 0;
 	border-radius: 4px;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
+	height: 15vh;
+	width: 15vw;
+	z-index: 99 !important;
+	/* border-radius: 50%; */
 
 	align-items: center;
 	justify-content: center;
@@ -16,27 +17,24 @@
 	font-size: 19px;
 	letter-spacing: 9px;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.4);
+	transform: translate(-50%, -50%);
 }
 
-.main-experience {
-	overflow-y: scroll;
-	height: 100vh;
-	-webkit-overflow-scrolling: touch;
-	overflow-y: visible;
-	position: relative;
-	height: unset;
-	overflow-x: hidden;
-	margin: 0;
-}
 
-.main-experienceWrapper {
+
+.main-experience__section {
+	position: static;
 	min-height: 100vh;
 	display: flex;
 	flex-wrap: nowrap;
 }
 
 .experience-container {
+	overflow-y: hidden;
+
+	min-height: 100vh;
+
 	cursor: none;
 	color: var(--black);
 	overflow-y: hidden;
@@ -44,9 +42,6 @@
 	align-items: center;
 	justify-content: center;
 	min-width: 100vw !important;
-	&:hover {
-		background-color: rgb(57, 57, 57);
-	}
 }
 
 .experience-text {

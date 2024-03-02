@@ -30,11 +30,14 @@ export const Slider = () => {
 			slideToClickedSlide={true}
 			className='swiper-container'
 			breakpoints={{
-				570: {
-					slidesPerView: 1.2,
+				270: {
+					slidesPerView: 1.4,
+					spaceBetween: 46,
+					navigation: true,
 				},
 				768: {
 					slidesPerView: 1.4,
+					spaceBetween: 76,
 				},
 				1024: {
 					slidesPerView: 1.8,
@@ -54,15 +57,11 @@ export const Slider = () => {
 								height={500}
 								className='slide-frame'
 								onClick={project.id}
-								allow='fullscreen'
 								allowfullscreen
+								allow='fullscreen'
 								title='Vimeo Video'
 								src={project.videoLink}
-								frameBorder={0}
-							>
-
-								
-							</iframe>
+							></iframe>
 							<AnimationSliders />
 						</div>
 					}

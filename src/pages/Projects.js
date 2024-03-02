@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
-import BtnScrollToTop from '../components/btnScrollToTop/BtnScrollToTop'
 import Project from '../components/projects/project'
 import { projects } from '../helpers/projectsList'
-import { ScrollTrigger } from './../utils/libs/ScrollTrigger.min'
 
 import './pagesStyle.css'
 
@@ -29,7 +27,6 @@ const Projects = () => {
 					</ul>
 				</div>
 			</main>
-			<BtnScrollToTop />
 		</div>
 	)
 }

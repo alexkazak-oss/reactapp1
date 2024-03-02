@@ -24,17 +24,18 @@ function AppWrapper() {
 	const wrapperRef = useRef(null)
 	const contentRef = useRef(null)
 
-	useEffect(() => {
-		ScrollSmoother.create({
-			wrapper: wrapperRef.current,
-			content: contentRef.current,
-			speed: 800,
-			smooth: 1.2,
-			effects: true,
-		})
-	}, [])
-
-	initializeGSAP()
+	if (ScrollTrigger.isTouch !== 1) {
+		useEffect(() => {
+			ScrollSmoother.create({
+				wrapper: wrapperRef.current,
+				content: contentRef.current,
+				speed: 800,
+				smooth: 1.2,
+				effects: true,
+			})
+		}, [])
+		initializeGSAP()
+	}
 
 	return (
 		<>

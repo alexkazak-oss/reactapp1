@@ -5,27 +5,28 @@ import './animationText.css'
 function AnimationSliders() {
 	const textRefs = useRef([])
 	const words = ['TICKER ITEM TICKER ITEM TICKER ITEM']
+	const tickerWrapper = useRef()
 
 	useLayoutEffect(() => {
 		words.forEach((word, wordIndex) => {
 			const letters = splitWordIntoLetters(word)
-			const duration = 2 // Продолжительность анимации в секундах
-			const delay = 0 // Задержка между запуском анимаций букв
+			const duration = 1 // Продолжительность анимации в секундах
+			const delay = -1 // Задержка между запуском анимаций букв
 
 			letters.forEach((letter, letterIndex) => {
 				gsap.fromTo(
 					textRefs.current[wordIndex][letterIndex],
 					{
-						x: -textRefs.current[wordIndex][letterIndex].clientWidth || 1,
+						x: -textRefs.current[wordIndex][letterIndex].clientWidth * 1,
 						ease: 'none',
 					},
 					{
-						x: '1000%', // Перемещение до правого края блока
+						x: tickerWrapper, // Перемещение до правого края блока
 						ease: 'none',
 						duration: duration,
-						delay: delay * letterIndex, // Задержка для каждой буквы
+						delay: delay * letters.length, // Задержка для каждой буквы
 						repeat: -1, // Бесконечное повторение анимации
-						repeatDelay: duration + delay * (letters.length == 0), // Задержка перед повторным запуском анимации
+						repeatDelay: duration + wordIndex * (letters.length == 0), // Задержка перед повторным запуском анимации
 					}
 				)
 			})
@@ -46,7 +47,7 @@ function AnimationSliders() {
 
 	return (
 		<div className='ticker'>
-			<div className='ticker-wrapper' id='ticker-wrapper'>
+			<div className='ticker-wrapper' id='ticker-wrapper' ref={tickerWrapper}>
 				{words.map((word, wordIndex) => (
 					<div
 						className='ticker-item'

@@ -50,3 +50,21 @@
 .sun:hover * {
 	fill: rgb(255, 145, 0);
 }
+
+@media (max-width: 890px) {
+	.dark-mode-btn {
+		position: absolute;
+		order: 1;
+		right: 10px;
+	}
+}
+
+@media (max-width: 568px) {
+	.dark-mode-btn {
+		transform: scale(120%);
+		position: absolute;
+		right: 7vw;
+		top: calc(var(--index) * 8);
+		float: right;
+	}
+}

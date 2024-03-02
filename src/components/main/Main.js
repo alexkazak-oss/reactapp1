@@ -1,6 +1,7 @@
 import React from 'react'
 import MainSwiper from './../main/swiper/Swiper'
 import MainDescription from './MainDescription/MainDescription'
+import MainComments from './MainComments/MainComments'
 import './style.css'
 
 const Main = () => {
@@ -25,6 +26,7 @@ const Main = () => {
 				<MainSwiper />
 			</div>
 			<MainDescription />
+			<MainComments/>
 		</main>
 	)
 }

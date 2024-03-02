@@ -37,7 +37,7 @@ const BtnScrollToTop = () => {
 	return (
 		<div
 			className={`btn-scroll__container ${
-				isBtnVisible ? 'visible ' : ''
+				isBtnVisible ? 'btnVisible ' : ''
 			}`}
 		>
 			<button className='btn-scroll' onClick={scrollToTop}></button>

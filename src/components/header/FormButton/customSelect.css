@@ -89,17 +89,20 @@
 		z-index: 15;
 	}
 
-	.select-button span {
-		transform: rotate(-90deg);
+	.select-button {
+		span {
+			transform: rotate(0deg);
+		}
 	}
 
 	.options-container {
 		position: absolute;
 		max-width: 0;
 		max-height: 100%;
-		padding: 8px;
+		padding: 0px;
 		overflow: hidden;
 
+		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 
