@@ -16,7 +16,7 @@ const Navbar = () => {
 						<strong>Alexandr</strong> Kazak
 					</NavLink>
 					<div className='mobile-nav-row'>
-						<NavbarMobile/>
+						<NavbarMobile />
 					</div>
 
 					<BtnMode />

@@ -47,8 +47,8 @@ $opening-angle: $pi * 1;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-left: -$width/2;
-	margin-top: -$height/2;
+	margin-left: calc(-1 * $width / 2);
+	margin-top: calc(-1 * $height / 2);
 	transition: transform 200ms;
 }
 $hamburger-spacing: 10px;
@@ -80,7 +80,7 @@ nav.mobile-menu {
 	height: $height;
 	display: flex;
 	align-items: center;
-	justify-content: end;
+	justify-content: flex-end;
 	position: relative;
 	box-sizing: border-box;
 	font-size: 20px;

@@ -1,14 +1,10 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { projects } from '../../../helpers/projectsList'
 import { ScrollTrigger } from '../../../utils/libs/ScrollTrigger.min'
 import gsap from '../../../utils/libs/gsap.min'
 import './mainDescriptionStyle.css'
 
 const MainDescription = () => {
-	const [tooltipText, setTooltipText] = useState('')
-	const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
-	const [tooltipVisible, setTooltipVisible] = useState()
-
 	useLayoutEffect(() => {
 		const mainExperienceContainer = document.querySelector(
 			'.main-experience__section'
@@ -51,11 +47,6 @@ const MainDescription = () => {
 		}
 	}, [])
 
-	const handleMouseEnter = title => {
-		setTooltipVisible(true)
-		setTooltipText(title)
-	}
-
 	const handleMouseMove = event => {
 		const cursorOffset = 0
 		const x = event.pageX - cursorOffset
@@ -78,28 +69,11 @@ const MainDescription = () => {
 							backgroundSize: '100%',
 							backgroundRepeat: 'no-repeat',
 						}}
-						onMouseEnter={() => handleMouseEnter(project.skills)}
-						onMouseMove={handleMouseMove}
-						onMouseLeave={handleMouseLeave}
 					>
 						<span className='experience-text'>{project.skills}</span>
 					</div>
 				))}
 			</section>
-			{tooltipVisible && (
-				<div
-					data-speed='-100'
-					data-lag='-110'
-					className='tooltip'
-					style={{
-						left: tooltipPosition.x,
-						top: tooltipPosition.y,
-						overflow: 'hidden',
-					}}
-				>
-					{tooltipText}
-				</div>
-			)}
 		</>
 	)
 }

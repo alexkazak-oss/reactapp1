@@ -19,7 +19,10 @@
 	column-gap: 30px;
 	align-items: center;
 }
-
+.social__item a {
+	width: 100px;
+	height: 100px;
+}
 .copyright {
 	font-size: 16px;
 }
@@ -31,11 +34,11 @@
 .social__item img:hover {
 	transition: 0.2s ease-out;
 	transform: scale(112%);
+	fill: var(--accent);
+	filter: brightness(0.3);
 }
 
 @media (max-width: 756px) {
-	/* Footer */
-
 	.footer {
 		padding: 40px 0 30px;
 	}

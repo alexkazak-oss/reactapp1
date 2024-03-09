@@ -12,10 +12,6 @@
 
 /* Btn */
 
-.first-svg {
-	transform: rotate(180deg);
-}
-
 .cta {
 	display: flex;
 	align-items: center;
@@ -37,7 +33,7 @@
 	&:hover {
 		opacity: 1;
 		transition: 0.2s;
-		box-shadow: 10px 10px 0 #6225e6;
+		box-shadow: 10px 10px 0 #ffffff;
 	}
 
 	&span:nth-child(2) {
@@ -64,8 +60,8 @@
 /**************SVG****************/
 
 svg.inbox {
-	height:90px;
-	width:90px;
+	height: 90px;
+	width: 90px;
 }
 
 path.one {
@@ -99,7 +95,7 @@ path.two {
 		fill: var(--white);
 	}
 	50% {
-		fill: yellow;
+		fill: rgba(213, 72, 53, 0.667);
 	}
 	100% {
 		fill: var(--white);
@@ -112,8 +108,8 @@ path.two {
 	justify-content: center;
 	position: absolute;
 
-	left: -170%;
-	transform: translateY(-50%);
+	left: -100%;
+	transform: translateY(-50%) translateX(2vw);
 	transition: left 1.2s ease-in-out;
 }
 
@@ -250,6 +246,7 @@ path.two {
 	}
 
 	.form-container {
+		left: -120%;
 		transition: left 1s ease;
 		position: relative;
 	}
@@ -262,11 +259,16 @@ path.two {
 	}
 
 	.form {
-	transform: translateY(-15%);
-
+		transform: translateY(-15%);
 		z-index: 99 !important;
 		position: fixed;
 		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+	.custom-select-wrapper {
+		height: 120px;
+		display: flex;
+		grid-row-start: 4;
 	}
 
 	.form__inputs {
@@ -281,7 +283,7 @@ path.two {
 	.form-submit {
 		max-width: 100%;
 		grid-row-start: 3;
-		height: 100px;
+		height: 50px;
 		writing-mode: horizontal-tb;
 	}
 

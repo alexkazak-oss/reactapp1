@@ -1,0 +1,92 @@
+:root {
+	--bg-color-loader: #181818;
+	--dot-color-loader: #505050;
+
+	--dot-space: 60px;
+
+	--padding: 24px;
+}
+
+.loader-wrapper {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--bg-color-loader);
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.App__Svg {
+	height: 70vh;
+	padding: var(--padding);
+}
+
+.svg-loader {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	animation-name: gradient;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-direction: normal;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+
+	--gradient-1: #48cce0;
+	--gradient-2: #505add;
+	--gradient-3: #be40c0;
+	--gradient-4: #fba82b;
+}
+
+.svg-loader {
+	animation-play-state: running;
+}
+
+.svg__gradient {
+	transition: stop-color 0.5s linear;
+}
+
+.svg__gradient_1 {
+	stop-color: var(--gradient-1);
+}
+
+.svg__gradient_2 {
+	stop-color: var(--gradient-2);
+}
+
+.svg__gradient_3 {
+	stop-color: var(--gradient-3);
+}
+
+.svg__gradient_4 {
+	stop-color: var(--gradient-4);
+}
+
+@keyframes gradient {
+	0%,
+	100% {
+		--gradient-1: #48cce0;
+		--gradient-2: #505add;
+		--gradient-3: #be40c0;
+		--gradient-4: #fba82b;
+	}
+	25% {
+		--gradient-4: #48cce0;
+		--gradient-1: #505add;
+		--gradient-2: #be40c0;
+		--gradient-3: #fba82b;
+	}
+	50% {
+		--gradient-3: #48cce0;
+		--gradient-4: #505add;
+		--gradient-1: #be40c0;
+		--gradient-2: #fba82b;
+	}
+	75% {
+		--gradient-2: #48cce0;
+		--gradient-3: #505add;
+		--gradient-4: #be40c0;
+		--gradient-1: #fba82b;
+	}
+}
