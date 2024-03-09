@@ -62,10 +62,7 @@ const HeaderForm = () => {
 					message: '',
 					files: [],
 				})
-				useEffect(() => {
-					console.log('Selected options:', selectedOptions)
-					console.log('Selected files:', selectedFiles)
-				}, [selectedOptions, selectedFiles])
+	
 				alert('Ваше сообщение успешно отправлено!')
 			})
 			.catch(error => {
